@@ -1,0 +1,135 @@
+@import '../utils/variables';
+
+
+@mixin font($size,$lineheight,$letterspacing) {
+  font-size: $size;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin displayjustify($display,$justify) {
+  display: $display;
+  justify-content: $justify;
+}
+
+@mixin position($position,$overflow) {
+  position: $position;
+  overflow: $overflow;
+}
+
+.portfolio {
+  background-color: $background-white-color;
+
+  &--indent {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &__title {
+    @include position(absolute,hidden);
+
+    @include geometry(1px,1px);
+    margin: -1px;
+  
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  
+  }
+}
+
+.portfolio-buttons {
+  @include displayjustify(flex,center);
+  margin-bottom: 50px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--indent {
+    margin-right: 8px;
+  }
+
+  &__item--indent:last-child {
+    margin-right: 0;
+  }
+}
+
+.portfolio-list {
+
+  @include displayjustify(flex,space-between);
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--active {
+    transition: box-shadow 250ms $timing-function;
+
+    width: 370px;
+
+    background: $background-white-color;
+    border: 1px solid $item-portfolio-color;
+  }
+
+  &__item--active:hover {
+    box-shadow: 0px 1px 1px $box-shadow-one, 0px 4px 4px $box-shadow-four, 1px 4px 6px $box-shadow-five;
+  }
+
+  &__overlay {
+
+    @include position(relative,hidden);
+   
+  }
+
+  &__overlay::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.";
+    transform: translateY(100%);
+    transition: transform 250ms $timing-function;
+  
+    display: block;
+    padding: 63px 24px;
+
+    @include geometry(100%,300px);
+
+    font-family: $font-roboto;
+
+    @include font(18px,1.55555555,0.03em);
+    color: $background-white-color;
+    background-color: $overlay-portfolio-color;
+  }
+
+  &__item--active:hover .portfolio-list__overlay::after {
+    transform: translateY(0);
+  }
+
+  &__card {
+    margin: 20px 24px;
+
+    border: 1px solid transparent;
+  }
+
+  &__product {
+    margin-bottom: 4px;
+
+    @include font(18px,2,0.06em);
+  }
+
+  &__category {
+    font-weight: 400;
+
+    @include font(16px,1.875,0.03em);
+    color: $text-head-color;
+  }
+}

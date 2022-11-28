@@ -1,0 +1,96 @@
+@import '../utils/variables';
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+} 
+
+@mixin textsize($fontsize,$lineheight,$letterspacing) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+.advantages {
+    background-color: $background-white-color;
+
+    &--indent {
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+
+    &__title { 
+      position: absolute;
+
+      @include geometry(1px,1px);
+      margin: -1px;
+      
+      
+      white-space: nowrap;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%); 
+    }
+
+    &-list {
+     /* display: flex;*/
+     @media screen and (min-width: 768px) {
+            display: flex;
+      }
+
+      gap: 30px;
+    }
+   
+}
+
+.advantages-list {        
+      &__item {
+         list-style: none; 
+      }
+
+      &__logo {
+
+        @media screen and (min-width: 480px) {
+          padding: 25px 19px;
+        }
+
+        @media screen and (min-width: 768px) {
+          padding: 25px 14.2px;  
+        }
+
+        @media screen and (min-width: 1200px) {
+          padding: 25px 10px;
+        }
+ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        margin-bottom: 30px;
+      
+        background: $background-our-team;
+        border-radius: 4px;
+      }
+
+      &__icon {
+        @include geometry(70px,70px);
+      }
+
+      &__name {
+        margin-bottom: 10px;
+
+        @include textsize(14px,1.1428,0.03em);
+
+        text-transform: uppercase;
+
+        @media  not screen and  (min-width: 768px) {      
+            text-align: center;
+        }
+      } 
+
+      &__description {
+        @include textsize(14px,1.7143,0.03em);
+        color: $text-head-color;
+      }
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфоліо</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.min.css">
+
+</head>
+
+<body>
+  <!--header-->
+  <header class="header">
+    <div class="container">
+      <div class="header__main">
+        <div class="header-logo">
+          <a class="header-logo__ref" href="#"><span class="header-logo__label header-logo__label--web">Web</span><span
+              class="header-logo__label header-logo__label--studio">Studio</span></a>
+        </div>
+
+        <nav>
+          <ul class="nav">
+            <li class="nav__item nav__item--indent"><a class="nav__ref" href="./index.html"
+                rel="noopener noreferrer">Студія</a>
+            </li>
+            <li class="nav__item nav__item--indent"><a class="nav__ref nav__ref--position" href="#">Портфоліо</a></li>
+            <li class="nav__item nav__item--indent"><a class="nav__ref" href="#">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <ul class="contact">
+          <li class="contact__item contact__item--alignment">
+
+            <a class="contact__ref contact__ref--transition" href="mailto:info@devstudio.com">
+              <svg class="contact__icon contact__icon--convert">
+                <use href="./images/icons.svg#icon-envelope"></use>
+              </svg>
+              <span class="contact__value">info@devstudio.com</span>
+            </a>
+
+          </li>
+
+          <li class="contact__item contact__item--alignment">
+
+            <a class="contact__ref contact__ref--transition" href="tel:+380961111111">
+              <svg class="contact__icon contact__icon--telephone">
+                <use href="./images/icons.svg#icon-smartphone"></use>
+              </svg>
+              <span class="contact__value">+38 096 111 1111</span>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!--main-->
+  <main>
+    <!--hero-->
+    <section class="portfolio portfolio--indent">
+      <div class="container">
+        <h1 class="portfolio__title">Категорії</h1>
+        <ul class="portfolio-buttons">
+          <li class="portfolio-buttons__item portfolio-buttons__item--indent"><button
+              class="button button--portfolio button--all" type="button">Усі</button>
+          </li>
+          <li class="portfolio-buttons__item portfolio-buttons__item--indent"><button class="button button--portfolio"
+              type="button">Веб-сайти</button>
+          </li>
+          <li class="portfolio-buttons__item portfolio-buttons__item--indent"><button class="button button--portfolio"
+              type="button">Додатки</button>
+          </li>
+          <li class="portfolio-buttons__item portfolio-buttons__item--indent"><button class="button button--portfolio"
+              type="button">Дизайн</button>
+          </li>
+          <li class="portfolio-buttons__item portfolio-buttons__item--indent"><button class="button button--portfolio"
+              type="button">Маркетинг</button>
+          </li>
+        </ul>
+        <ul class="portfolio-list">
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <a href="#">
+                <img src="./images/categoryone.jpg" alt="technoquack" width="370">
+              </a>
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Технокряк</h3>
+              <p class="portfolio-list__category">Веб-сайт</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categorytwo.jpg" alt="Poster New Orlean" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Постер New Orlean vs Golden Star</h3>
+              <p class="portfolio-list__category">Дизайн</p>
+            </div>
+
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categorythree.jpg" alt="Restaurant Seafood" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Ресторан Seafood</h3>
+              <p class="portfolio-list__category">Додаток</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categoryfour.jpg" alt="Project Prime" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Проєкт Prime</h3>
+              <p class="portfolio-list__category">Маркетинг</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categoryfive.jpg" alt="Project Boxes" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Проєкт Boxes</h3>
+              <p class="portfolio-list__category">Додаток</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <a href="#">
+                <img src="./images/categorysix.jpg" alt="Inspiration has no Borders" width="370">
+              </a>
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Inspiration has no Borders</h3>
+              <p class="portfolio-list__category">Веб-сайт</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categoryseven.jpg" alt="Limited Edition" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Видання Limited Edition</h3>
+              <p class="portfolio-list__category">Дизайн</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categoryeight.jpg" alt="Project LAB" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product">Проєкт LAB</h3>
+              <p class="portfolio-list__category">Маркетинг</p>
+            </div>
+          </li>
+          <li class="portfolio-list__item portfolio-list__item--active">
+            <div class="portfolio-list__overlay">
+              <img src="./images/categorynine.jpg" alt="Growing Business" width="370">
+            </div>
+            <div class="portfolio-list__card">
+              <h3 class="portfolio-list__product"">Growing Business</h3>
+              <p class=" portfolio-list__category">Додаток</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!--footer-->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-sections">
+
+        <div class="footer-address">
+
+          <div class="footer-address__logo"><a class="footer-address__ref" href="#"><span
+                class="footer-address__lable footer-address__lable--web">Web</span><span
+                class="footer-address__lable footer-address__lable--studio">Studio</span></a>
+          </div>
+
+          <address class="address-block">
+            <ul class="adress-list">
+              <li class="adress-list__item adress-list__item--indent"><a
+                  class="adress-list__ref adress-list__ref--font adress-list__ref--begin"
+                  href="https://goo.gl/maps/GtrAekrX5XwwJfKh8" target="_blank" rel="noopener noreferrer">м. Київ, пр-т
+                  Лесі
+                  Українки, 26</a></li>
+              <li class="adress-list__item adress-list__item--indent"><a class="adress-list__ref adress-list__ref--font"
+                  href="mailto:info@example.com">info@example.com</a></li>
+              <li class="adress-list__item adress-list__item--indent"><a class="adress-list__ref adress-list__ref--font"
+                  href="tel:+380961111111">+38 096
+                  111 11
+                  11</a>
+              </li>
+            </ul>
+          </address>
+
+        </div>
+
+        <section class="footer-nets">
+          <h2 class="footer-nets__title">приєднуйтесь</h2>
+
+          <ul class="nets-list">
+
+            <li class="nets-list__item">
+              <a class="nets-list__ref nets-list__ref--geometry nets-list__ref--active" href="#">
+                <svg class="nets-list__icon">
+                  <use href="./images/icons.svg#icon-instagramone"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="nets-list__item">
+              <a class="nets-list__ref nets-list__ref--geometry nets-list__ref--active" href="#">
+                <svg class="nets-list__icon">
+                  <use href="./images/icons.svg#icon-twittertwo"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="nets-list__item">
+              <a class="nets-list__ref nets-list__ref--geometry nets-list__ref--active" href="#">
+                <svg class="nets-list__icon">
+                  <use href="./images/icons.svg#icon-facebooktwo"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="nets-list__item">
+              <a class="nets-list__ref nets-list__ref--geometry nets-list__ref--active" href="#">
+                <svg class="nets-list__icon">
+                  <use href="./images/icons.svg#icon-linkedintwo"></use>
+                </svg>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <form class="footer-form">
+          <h2 class="footer-form__title">Підпишіться на розсилку</h2>
+          <label for="mailfooter"></label>
+          <div class="footer-form__mailing">
+            <input class="footer-form__input" type="email" name="mailfooter" id="mailfooter" placeholder="E-mail">
+            <button class="button button--mailing" type="submit">
+              <span class="footer-form__caption">Підписатися</span>
+              <svg class="footer-form__icon">
+                <use href="./images/icons.svg#icon-formtelegram"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

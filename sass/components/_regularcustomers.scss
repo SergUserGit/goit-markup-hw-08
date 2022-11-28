@@ -1,0 +1,184 @@
+@import '../utils/variables';
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height; 
+}
+
+@mixin borderradius($size,$border,$color,$radius) {
+  border: $size $border $color;
+  border-radius: $radius;
+}
+
+@mixin displayjustify($display,$justify,$align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($size,$lineheight,$align,$letterspacing) {
+  font-size: $size;
+  line-height: $lineheight;
+  text-align: $align;
+  letter-spacing: $letterspacing;
+}
+
+.regular-customers {
+  background-color: $background-white-color;
+
+  &--indent {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include font(36px,1.16667,center,0.03em);
+
+  }
+}
+
+.customers-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--alignment {
+
+    @include displayjustify(flex,center,center);
+
+  }
+
+  &__icon {
+    @include geometry(0px,0px);
+  }
+
+  &__icon--one {
+
+    @media screen and (min-width: 480px), 
+    screen and (min-width: 768px) {
+      @include geometry(44.27px,49.23px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include geometry(41px,46.7px);
+    }
+  }
+
+  &__icon--two {
+    @include geometry(40px,52px);
+  }
+
+  &__icon--three {
+
+    @media screen and (min-width: 480px), 
+    screen and (min-width: 768px) {
+      @include geometry(41px,42.6px);
+    }  
+
+    @media screen and (min-width: 1200px) {
+        @include geometry(43.46px,41.18px);
+    }
+  }
+
+  &__icon--four {
+
+    @media screen and (min-width: 480px), 
+    screen and (min-width: 768px) {
+      @include geometry(79.66px,42.02px);
+    }  
+
+    @media screen and (min-width: 1200px) {
+        @include geometry(84.44px,40.62px);
+    }
+  }
+
+  &__icon--five {
+
+    @media screen and (min-width: 480px), 
+    screen and (min-width: 768px) {
+      @include geometry(59px,47px);
+    }
+
+    @media screen and (min-width: 1200px) 
+    {
+      @include geometry(62.54px,45.43px);
+    }
+  }
+
+  &__icon--six {
+
+    @media screen and (min-width: 480px), 
+    screen and (min-width: 768px) 
+    {
+      @include geometry(88.48px,45.44px);
+    }  
+
+    @media screen and (min-width: 1200px) 
+    {
+      @include geometry(93.79px,43.93px);
+    }
+  }
+}
+
+.customers-list__ref {
+  
+  fill: $company-border;
+
+  &--alignment {
+
+    @include displayjustify(flex,center,center);
+
+  }
+
+  &--geometry {
+    transition: border 250ms $timing-function, border-radius 250ms $timing-function;
+  
+    @media screen and (min-width: 480px) 
+    {
+      padding: 16px 52px;
+    }
+    @media screen and (min-width: 768px) 
+    {
+      padding: 16px 60px;
+    }
+    @media screen and (min-width: 1200px) 
+    {
+      padding: 16px 32px;
+    }
+
+    @media screen and (min-width: 480px) 
+    {
+       @include geometry(210px,92px);
+    }
+    @media screen and (min-width: 768px) 
+    {
+       @include geometry(226px,92px);
+    }
+    @media screen and (min-width: 1200px) 
+    {
+       @include geometry(170px,92px);
+    }
+    @include borderradius(1px,solid,$company-border,4px);
+  }
+
+  &--geometry:hover {
+
+    @include borderradius(1px,solid,$text-blue-color,4px);
+
+  }
+  
+}
+
+.customers-list__ref {
+  transition: fill 250ms $timing-function;
+  &:hover,
+  &:focus{
+    fill: $text-blue-color;
+  }
+}

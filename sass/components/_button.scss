@@ -1,0 +1,93 @@
+@import '../utils/variables';
+
+@mixin font($fontweight,$fontsize,$lineheight,$letterspacing) {
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin color($color,$backgroundcolor) {
+  color: $color;
+  background-color: $backgroundcolor;  
+}
+
+@mixin shadowradius($sizeone,$sizetwo,$sizethree,$color,$radius) {
+  box-shadow: $sizeone $sizetwo $sizethree $color;
+  border-radius: $radius;
+}
+
+@mixin padding($sizeone,$sizetwo,$align) {
+  padding: $sizeone $sizetwo;
+  align-items: $align;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+
+  &--hero {
+    @include padding(10px,32px,center);
+    @include font(700,16px,1.875,0.06em);
+    @include color($background-white-color,$text-blue-color);
+  }
+
+  &--form-modal {
+    transition: background-color 250ms $timing-function;
+
+    outline: none;
+    display: flex;
+    @include padding(10px,52px,center);
+   
+    margin-left: 164px;
+    margin-right: 164px;
+    margin-bottom: 40px;
+
+    font-family: $font-roboto;
+    @include font(700,16px,1.875,0.06em);
+    text-align: center;
+    @include color($background-white-color,$text-blue-color);
+    @include shadowradius(0px,4px,4px,$button-form-color,4px);
+  }
+
+  &--form-modal:hover,
+  &--form-modal:focus {
+    background-color: $button-color;
+  }
+
+  &--portfolio {
+    transition: color 250ms $timing-function, background-color 250ms $timing-function, box-shadow 250ms $timing-function;
+
+    padding: 6px 22px;
+
+    @include color($main-color, $background-our-team);
+    @include font(500,16px,1.625,0.03em);
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  &--portfolio:hover,
+  &--portfolio:focus {
+    @include color($background-white-color, $text-blue-color);
+    box-shadow: 0px 6px 0px $background-our-team;
+  }
+
+  &--all {
+    padding: 6px 25px;
+  }
+
+  &--mailing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+    width: 200px;
+
+    background-color: $text-blue-color;
+
+    @include shadowradius(0px,4px,4px,$button-form-color,4px);
+  }
+
+}

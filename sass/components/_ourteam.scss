@@ -1,0 +1,145 @@
+@import '../utils/variables';
+
+@mixin padding($top,$bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin font($size,$lineheight,$align,$letterspacing) {
+  font-size: $size;
+  line-height: $lineheight;
+  text-align: $align;
+  letter-spacing: $letterspacing;
+}
+
+@mixin displayjustify($display,$justify,$gap) {
+  display: $display;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin marginfont($margin,$font) {
+  margin-bottom: $margin;
+  font-weight: $font;
+}
+
+.our-team{
+  background-color: $background-our-team;
+
+  &--indent {
+    @include padding(94px,94px);
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include font(36px,1.16667,center,0.03em);
+  }
+}
+
+.team-list {
+
+  @media screen and (min-width: 768px), screen and (min-width: 1200px) 
+   {
+
+      @include displayjustify(flex,center,30px);
+
+   } 
+
+   @media screen and (min-width: 768px) and (max-width: 1199px) {
+     flex-wrap: wrap;
+   }
+  
+  &__item {
+    list-style: none;
+  }
+
+  &__item--active {
+
+    @media screen and (min-width: 480px) {
+      width: 450px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+  
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+    }
+    /*width: 270px;*/
+
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      margin-bottom: 30px;
+    } 
+
+    background: $background-white-color;
+    box-shadow: 0px 1px 3px $box-shadow-one, 0px 1px 1px $box-shadow-two, 0px 2px 1px $box-shadow-three;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  &__item--active:last-child {
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      margin-bottom: 0px;
+    } 
+  } 
+
+  &__card {
+    padding: 30px 10px;
+  }
+
+  &__employee {
+
+    @include marginfont(10px,500);
+    @include font(16px,1.1875,center,0.03em);
+
+  }
+
+  &__position {
+
+    @include marginfont(16px,400);
+    @include font(16px,1.1875,center,0.03em);
+    color: $text-head-color;
+  }
+}
+
+.team-nets {
+
+  @include displayjustify(flex,center,10px);
+  
+  &__item {
+    list-style: none;
+  }
+
+  &__ref {
+    transition: fill 250ms $timing-function;
+
+    fill: $company-border;
+  }
+
+  &__ref:hover,
+  &__ref:focus {
+    fill: $background-white-color;
+  }
+
+  &__ref--geometry {
+    transition: background-color 250ms $timing-function, border-radius 250ms $timing-function;
+
+    display: block;
+
+    @include padding(12px,8px);
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &__ref--geometry:hover,
+  &__ref--geometry:focus {
+    background-color: $text-blue-color;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+  }
+}

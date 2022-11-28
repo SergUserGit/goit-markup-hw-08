@@ -1,0 +1,181 @@
+@import '../utils/variables';
+
+@mixin displayalign($display,$align) {
+  display: $display;
+  align-items: $align;
+}
+
+@mixin fillcolor($fill,$color) {
+  fill: $fill;
+  color: $color;
+}
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin padding($top,$bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin font($fontsize,$lineheight,$letterspacing) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin familyweight($family,$weight) {
+  font-family: $family;
+  font-weight: $weight;
+}
+
+.header {
+  border-bottom: 1px solid $border-color;
+  background-color: $background-white-color;
+
+  &__main {
+    @include displayalign(flex,center);
+  }
+}
+
+.header-logo {
+  margin-right: 95px;
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__label {
+    @include familyweight($font-raleway,700);
+    @include font(26px,1.1923,0.03em);
+  }
+
+  &__label--web {
+    color: $text-blue-color;
+  }
+
+  &__label--studio {
+    color: $text-black-color;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--indent {
+    margin-right: 50px;
+  }
+
+  &__item--indent:last-child {
+    margin-right: 0;
+  }
+
+  &__ref {
+    transition: color 250ms $timing-function;
+
+    display: block;
+
+    @include padding(32px,31px);
+
+    font-weight: 500;
+
+    @include font(14px,1.1428,0.02em);
+
+    color: $main-color;
+    text-decoration: none;
+  }
+
+  &__ref:hover,
+  &__ref:focus {
+    color: $text-blue-color;
+  }
+
+  &__ref--position {
+    position: relative;
+  }
+
+  &__ref--position::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    display: block;
+    @include geometry(100%,4px);
+    background-color: $text-blue-color;
+  } 
+}
+
+.contact {
+  margin-left: auto;
+  display: flex;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--alignment {
+    display: flex;
+    align-items: center;
+    margin-right: 49px;
+  }
+
+  &__item--alignment:last-child {
+    margin-right: 0;
+  }
+
+  &__ref {
+    transition: color 250ms $timing-function, fill 250ms $timing-function;
+
+    @include displayalign(flex,center);
+    @include padding(32px,31px);
+    
+    @include familyweight($font-roboto,500);
+
+    @include font(14px,1.1428,0.02em);
+    @include fillcolor($text-head-color,$text-head-color);
+    text-decoration: none;
+  }
+
+  &__ref:hover,
+  &__ref:focus {
+    @include fillcolor($text-blue-color,$text-blue-color);
+  }
+
+
+  &__ref--transition {
+    transition: color 250ms $timing-function, fill 250ms $timing-function;
+
+    @include fillcolor($text-head-color,$text-head-color);
+  }
+
+  &__ref--transition:hover,
+  &__ref--transition:focus {
+    @include fillcolor( $text-blue-color,$text-blue-color);
+  }
+
+  &__icon {
+    display: block;
+    margin-right: 10px;
+
+    fill: currentColor;
+  }
+
+  &__icon--convert {
+    @include geometry(16px,12px);
+  }
+
+  &__icon--telephone {
+    @include geometry(10px,16px);
+  }
+
+  &__value {
+    display: block;
+  }
+}

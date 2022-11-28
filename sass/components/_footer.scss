@@ -1,0 +1,209 @@
+@import '../utils/variables';
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin backgroundradius($color,$radius) {
+  background-color: $color;
+  border-radius: $radius;
+}
+
+@mixin font($fontsize,$lineheight,$letterspacing) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin fontcolor($font,$color) {
+  font-family: $font;
+  color: $color;
+}
+
+@mixin margintext($margin,$text) {
+  margin-bottom: $margin;
+  text-transform: $text;
+}
+
+@mixin padding($left,$top,$bottom) {
+  padding-left: $left;
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+.footer {
+  background-color: $background-hero;
+}
+
+.footer-sections {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-address {
+  margin-right: 70px;
+  
+  &__logo {
+    padding-top: 60px;
+  }
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__lable {
+    font-family: $font-raleway;
+    font-weight: 700;
+
+    @include font(26px,1.1923,0.03em);
+  }
+
+  &__lable--web {
+    color: $text-blue-color;
+  }
+
+  &__lable--studio {
+    color: $background-white-color;
+  }
+}
+
+.address-block {
+  margin-top: 20px;
+  padding-bottom: 60px;
+
+  font-style: normal;
+}
+
+.adress-list {
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item--indent {
+    margin-bottom: 9px;
+  }
+
+  &__item--indent:last-child {
+    margin-bottom: 0;
+  }
+
+  &__ref {
+    transition: color 250ms $timing-function;
+
+    color: $foter-color;
+    text-decoration: none;
+  }
+
+  &__ref:hover,
+  &__ref:focus {
+    color: $background-white-color;
+  }
+
+  &__ref--font {
+    @include font(14px,1.7143,0.03em);
+    color: $text-head-color;
+  }
+
+  &__ref--begin {
+    color: $background-white-color;
+  }
+}
+
+.footer-nets {
+  margin-right: 93px;
+
+  &__title {
+   
+    @include margintext(20px,uppercase); 
+    @include font(14px,1.1428,0.03em);
+    @include fontcolor($font-roboto,$background-white-color);
+
+  }
+}
+
+.nets-list {
+  display: flex;
+  gap: 10px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__ref--geometry {
+    transition: background-color 250ms $timing-function, border-radius 250ms $timing-function;
+
+    display: block;
+
+    @include padding(12px,12px,8px);
+    padding-right: 12px;
+   
+  }
+
+  &__ref--geometry:hover,
+  &__ref--geometry:focus {
+
+    @include backgroundradius($text-blue-color,50%);
+ 
+  }
+
+  &__ref--active {
+
+    @include backgroundradius($color-iconeone,50%);
+    
+  }
+
+  &__icon {
+    @include geometry(20px,20px);
+  }
+}
+
+.footer-form {
+
+  &__title {
+    @include margintext(20px,uppercase);
+    @include font(14px,1.14285,0.03em);
+    @include fontcolor($font-roboto,$background-white-color);
+  }
+
+  &__mailing {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    outline: none;
+    margin-right: 12px;
+    @include geometry(358px,50px);
+
+    @include padding(16px,15px,15px);
+    
+    border: 1px solid $border-footer-color;
+    filter: drop-shadow(0px 4px 4px $button-form-color);
+
+    @include backgroundradius($background-hero,4px);
+    @include font(16px,1.25,0.03em);
+    @include fontcolor($font-roboto, $foter-color);
+  }
+
+  &__caption {
+    margin-right: 10px;
+    display: block;
+
+  
+    font-weight: 700;
+    @include font(16px,1.875,0.06em);
+    text-align: center;
+    @include fontcolor($font-roboto, $background-white-color);
+  }
+
+  &__icon {
+    @include geometry(24px,24px);
+  }
+
+}

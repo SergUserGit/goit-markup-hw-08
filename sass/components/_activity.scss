@@ -1,0 +1,80 @@
+@import '../utils/variables';
+
+@mixin textfont($align,$spacing) {
+  text-align: $align;
+  letter-spacing: $spacing;
+} 
+
+@mixin textsize($lineheight,$fontsize) {
+  line-height: $lineheight;
+  font-size: $fontsize;
+} 
+
+@mixin padding($top,$bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+} 
+
+.activity {
+
+    @media screen and (min-width: 480px) , screen and (min-width: 768px) {
+      display: none;
+    }  
+
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }  
+ 
+
+  padding-top: 0;
+
+  background-color: $background-white-color;
+
+  &--indent {
+  /*  @media screen and (min-width: 480px) and (max-width: 1199px) {
+      display: none;
+    }*/
+    @include padding(0px,94px);
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include textsize(1.16667,36px);
+    @include textfont(center,0.03em);
+
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+}
+
+.activity-list {
+
+  &__item {
+    list-style: none;
+  } 
+
+  &__background {
+    position: relative;
+  }
+
+  &__product {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    @include padding(27px,27px);
+    width: 370px;
+    background-color: $activity-background-color;
+    font-family: $font-roboto;
+    @include textsize(1.14286,14px);
+    @include textfont(center,0.03em);
+    text-transform: uppercase;
+    color: $background-white-color;
+  }
+
+}

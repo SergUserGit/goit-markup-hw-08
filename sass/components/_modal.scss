@@ -1,0 +1,276 @@
+@import '../utils/variables';
+
+@mixin geometry($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($family,$size,$lineheight,$letterspacing) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin margin($right,$left,$bottom) {
+  margin-right: $right;
+  margin-left: $left;
+  margin-bottom: $bottom;
+}
+
+@mixin borderradius($size,$border,$color,$radius) {
+  border: $size $border $color;
+  border-radius: $radius;
+}
+
+@mixin position($position,$top,$left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin displayalign($display,$align) {
+  display: $display;
+  align-items: $align;
+}
+
+@mixin displaymargin($display,$margin) {
+   display: $display;
+   margin-bottom: $margin;
+}
+
+
+.backdrop {
+  @include position(fixed,0,0);
+  transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
+
+  @include geometry(100%, 100%);
+  background-color: $box-shadow-three;
+
+  &--is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &--is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+}
+
+.modal {
+
+  @include position(absolute,50%,50%);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms $timing-function;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: $background-white-color;
+  box-shadow: 0px 1px 3px $box-shadow-one, 0px 1px 1px $box-shadow-two, 0px 2px 1px $box-shadow-three;
+  border-radius: 4px;
+}
+
+.modal-button {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include displayalign(flex,center);
+  @include geometry(30px, 30px);
+  
+  justify-content: center;
+  margin-top: 8px;
+  margin-right: 8px;
+
+  @include borderradius(1px,solid,$border-close-color,50%);
+
+  background-color: $background-white-color;
+  cursor: pointer;
+
+  & .modal-button__icon {
+    transition: fill 250ms $timing-function;
+  }
+
+  &:hover .modal-button__icon,
+  &:focus .modal-button__icon{
+    fill: $text-blue-color;
+  }
+
+
+  &__icon {
+
+    @include geometry(18px, 18px);
+
+    fill: $text-black-color;
+  }
+}
+
+.modal-form {
+
+  &__title {
+    margin-top: 40px;
+    @include margin(40px,40px,12px);
+    @include font($font-roboto,20px,1.15,0.03em);
+    text-align: center;
+  }
+}
+
+.modal-group {
+  @include margin(40px,40px,20px);
+}
+
+.modal-field {
+
+  @include displaymargin(flex,10px);
+  flex-direction: column;
+
+  &__label {
+
+    @include displaymargin(inline-block,4px);
+    @include font($font-roboto,12px,1.166667,0.01em);
+    color: $text-head-color;
+  }
+
+  &__element {
+    position: relative;
+  }
+
+  &__input {
+    @include geometry(448px, 40px);
+    padding-left: 42px;
+    outline: none;
+  
+    cursor: pointer;
+
+    @include borderradius(1px,solid,$border-input-color,4px);
+  }
+
+  &__icon {
+
+    @include position(absolute,11px,12px);
+    bottom: 11px;
+    
+    display: inline-block;
+
+    @include geometry(18px, 18px);
+    fill: $main-color;
+  }
+}
+
+ .modal-field__element {
+
+  & .modal-field__icon {
+    transition: fill 250ms $timing-function;
+  }
+
+  &:focus-within .modal-field__icon,
+  &:hover .modal-field__icon {
+    fill: $text-blue-color;
+  } 
+
+  & .modal-field__input {
+    transition: border-color 250ms $timing-function;
+  }
+  
+  &:focus-within .modal-field__input,
+  &:hover .modal-field__input {
+    border-color: $text-blue-color;
+  } 
+}
+  
+.modal-textarea {
+
+  @include displaymargin(flex,20px);
+  flex-direction: column;
+
+  &__label {
+
+    @include displaymargin(inline-block,4px);
+    @include font($font-roboto,12px,1.166667,0.01em);
+    color: $text-head-color;
+  }
+
+  &__comment {
+    outline: none;
+    resize: none;
+    @include geometry(448px, 120px);
+    padding: 12px 16px;
+
+    @include font($font-roboto,12px,1.1666,0.01em);
+
+    color: $color-textarea;
+
+    @include borderradius(1px,solid,$border-input-color,4px);
+  
+  }
+
+  & .modal-textarea__comment {
+    transition: border-color 250ms $timing-function;
+  }
+
+  &:focus-within .modal-textarea__comment,
+  &:hover .modal-textarea__comment {
+    border-color: $text-blue-color;
+  }
+ }
+
+  .modal-condition {
+
+    @include displayalign(flex,center);  
+
+
+    @include margin(51px,52px,30px);
+
+  &__label {
+
+    @include displayalign(flex,center);
+    margin-right: 2px;
+
+    @include font($font-roboto,14px,1.714,0.03em);
+    color: $text-head-color;
+  }
+
+  &__input {
+    position: absolute;
+
+    @include geometry(1px, 1px);
+    margin: -1px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  &__input:checked+.modal-condition__icon {
+    border-color: transparent;
+    background-color: $text-blue-color;
+    background-image: url('../images/formchek.svg');
+    background-size: contain;
+    background-origin: border-box;
+  }
+
+  &__icon {
+    display: inline-block;
+
+    @include geometry(16px, 15px);
+    margin-right: 8.38px;
+
+    cursor: pointer;
+
+    @include borderradius(2px,solid,$main-color,4px);
+
+  }
+
+  &__ref {
+
+    @include font($font-roboto,14px,1.714,0.03em);
+    color: $text-blue-color;
+  }
+
+ }
