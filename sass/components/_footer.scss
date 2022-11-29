@@ -211,6 +211,10 @@
     @include margintext(20px,uppercase);
     @include font(14px,1.14285,0.03em);
     @include fontcolor($font-roboto,$background-white-color);
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    { 
+      text-align: center;
+    } 
   }
 
   &__mailing {

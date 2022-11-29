@@ -1328,6 +1328,11 @@ body {
   font-family: "Roboto", sans-serif;
   color: #FFFFFF;
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .footer-form__title {
+    text-align: center;
+  }
+}
 @media screen and (min-width: 1200px) {
   .footer-form__mailing {
     display: -webkit-box;
