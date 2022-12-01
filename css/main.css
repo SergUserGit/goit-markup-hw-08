@@ -129,6 +129,29 @@ body {
   }
 }
 
+.menu-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
 .container {
   /* max-width: 1200px;*/
   padding-left: 15px;
@@ -1137,11 +1160,20 @@ body {
   background-color: #2196F3;
 }
 
+.menu-icon {
+  width: 40px;
+  height: 40px;
+}
+
 .contact {
   margin-left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+}
+@media screen and (min-width: 1200px) {
+  .contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .contact__item {
   list-style: none;
