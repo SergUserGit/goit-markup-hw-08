@@ -32,8 +32,24 @@
     margin-left: auto;
     margin-right: auto;
 
-    background-image: linear-gradient(to right, $gradient-color, $gradient-color),
-    url('../images/herobackground.jpg');
+
+    @media screen and (min-width: 480px) 
+    {
+      background-image: linear-gradient(to right, $gradient-color, $gradient-color),
+      url('../images/herobackgroundmobile.jpg');
+    }
+
+    @media screen and (min-width: 768px) 
+    {
+      background-image: linear-gradient(to right, $gradient-color, $gradient-color),
+      url('../images/herobackgroundtablet.jpg');
+    }
+
+    @media screen and (min-width: 1200px) 
+    {
+      background-image: linear-gradient(to right, $gradient-color, $gradient-color),
+      url('../images/herobackground.jpg');
+    }
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
