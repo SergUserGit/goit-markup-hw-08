@@ -34,6 +34,11 @@
 
 .footer {
   background-color: $background-hero;
+  @media screen and (min-width: 480px) and (max-width: 1199px) 
+    { 
+     /* padding-top: 60px;*/
+      padding-bottom: 60px;
+    }  
 }
 
 .footer-sections {
@@ -53,10 +58,29 @@
 }
 
 .footer-address {
-  margin-right: 70px;
+  @media screen and (min-width: 1200px) 
+  {
+      margin-right: 70px;
+  }
   
   &__logo {
     padding-top: 60px;
+    @media screen and (min-width: 480px) and (max-width: 1199px)
+    {
+      margin-bottom: 28px;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767px)
+    {
+       padding-left: 163px;
+       padding-right: 163px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)
+    {
+       padding-left: 115px;
+       padding-right: 204px;
+    }
   }
 
   &__ref {
@@ -93,7 +117,15 @@
 }
 
 .address-block {
-  margin-top: 20px;
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+     padding-left: 124px;
+     padding-right: 124px;
+  }
+  @media screen and (min-width: 1200px) 
+  {
+    margin-top: 20px;
+  }
   padding-bottom: 60px;
 
   font-style: normal;
@@ -106,7 +138,7 @@
   }
 
   &__item--indent {
-    margin-bottom: 9px;
+    margin-bottom: 12px;
   }
 
   &__item--indent:last-child {
@@ -143,10 +175,21 @@
 }
 
 .footer-nets {
-  margin-right: 93px;
+
+  @media screen and (min-width: 1200px) 
+  {
+      margin-right: 93px;
+  }
 
   @media screen and (min-width: 480px) and (max-width: 767px) {
     margin-bottom: 60px;
+    padding-left: 137px;
+    padding-right: 137px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) 
+  {
+    padding-right: 89px;
   }
 
   &__title {
@@ -207,6 +250,12 @@
 
 .footer-form {
 
+  @media screen and (min-width: 768px) and (max-width: 1199px) 
+  {
+    padding-left: 159px;
+    padding-right: 159px;
+  }
+
   &__title {
     @include margintext(20px,uppercase);
     @include font(14px,1.14285,0.03em);
@@ -227,8 +276,18 @@
 
   &__input {
     outline: none;
-    margin-right: 12px;
-    @include geometry(358px,50px);
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 12px;
+    }
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      @include geometry(450px,50px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include geometry(358px,50px);
+    }
 
     @include padding(16px,15px,15px);
     
@@ -238,10 +297,23 @@
     @include backgroundradius($background-hero,4px);
     @include font(16px,1.25,0.03em);
     @include fontcolor($font-roboto, $foter-color);
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-bottom: 20px;
+    }  
   }
 
   &__caption {
-    margin-right: 10px;
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-right: 12px;
+    }   
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 10px;
+    }
     display: block;
 
   
