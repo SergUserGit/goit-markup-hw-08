@@ -1086,6 +1086,7 @@ body {
 .header {
   border-bottom: 1px solid #ECECEC;
   background-color: #FFFFFF;
+  position: relative;
 }
 .header__main {
   display: -webkit-box;
@@ -1238,6 +1239,17 @@ body {
   height: 16px;
 }
 .contact__value {
+  display: block;
+}
+
+.header-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+.header-menu.is-open {
   display: block;
 }
 
