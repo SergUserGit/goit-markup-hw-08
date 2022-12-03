@@ -63,18 +63,35 @@
 }
 
 .nav {
-  display: flex;
-
+  @media screen and (min-width: 768px) 
+  {
+     display: flex;
+  }
   &__item {
     list-style: none;
   }
 
   &__item--indent {
-    margin-right: 50px;
+    @media screen and (min-width: 480px) and (max-width: 767px) 
+    {
+       margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 50px;
+    }  
   }
 
   &__item--indent:last-child {
-    margin-right: 0;
+    @media screen and (min-width: 480px) and (max-width: 767px) 
+    {
+       margin-bottom: 0;
+    }
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 0;
+    }
   }
 
   &__ref {
@@ -82,8 +99,10 @@
 
     display: block;
 
-    @include padding(32px,31px);
-
+    @media screen and (min-width: 1200px) 
+    {
+      @include padding(32px,31px);
+    }
     font-weight: 500;
 
     @media screen and (min-width: 480px) and (max-width: 767px) 
@@ -103,18 +122,24 @@
   }
 
   &__ref--position {
-    position: relative;
+    @media screen and (min-width: 768px)
+    {
+      position: relative;
+    }
   }
 
   &__ref--position::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
+    @media screen and (min-width: 768px)
+    {
+     content: '';
+     position: absolute;
+     left: 0;
+     bottom: -1px;
 
-    display: block;
-    @include geometry(100%,4px);
-    background-color: $text-blue-color;
+     display: block;
+     @include geometry(100%,4px);
+     background-color: $text-blue-color;
+    }
   } 
 }
 
@@ -126,9 +151,21 @@
 .contact {
   margin-left: auto;
 
-  @media screen and (min-width: 1200px) 
-  {  
-    display: flex;
+  display: flex;
+  
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+     flex-direction: column-reverse;
+  }  
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) 
+  {
+     flex-direction: column;
+  }  
+  
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+    margin-bottom: 64px;
   }
 
   &__item {
@@ -138,19 +175,37 @@
   &__item--alignment {
     display: flex;
     align-items: center;
-    margin-right: 49px;
+
+    @media screen and (min-width: 480px) and (max-width: 767px) 
+    {
+      margin-top: 32px;
+    }  
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 49px;
+    }
   }
 
   &__item--alignment:last-child {
-    margin-right: 0;
+    @media screen and (min-width: 480px) and (max-width: 767px) 
+    {
+      margin-top: 0px;
+    } 
+    @media screen and (min-width: 1200px) 
+    {
+      margin-right: 0;
+    }
   }
 
   &__ref {
     transition: color 250ms $timing-function, fill 250ms $timing-function;
 
     @include displayalign(flex,center);
-    @include padding(32px,31px);
-    
+
+    @media screen and (min-width: 1200px) 
+    {
+      @include padding(32px,31px);
+    }
     @include familyweight($font-roboto,500);
 
     @include font(14px,1.1428,0.02em);
@@ -232,12 +287,20 @@
   width: 100%;
   height: 796px;
   padding-left: 40px;
+  padding-top: 48px;
 
   background: $background-white-color;
   box-shadow: 0px 4px 8px $box-shadow-six, 0px 2px 4px $box-shadow-seven, 0px 1px 3px $box-shadow-five;
 
   &.is-open {
     display: block;
+  }
+}
+
+.header-nav {
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+    margin-bottom: 306px;
   }
 }
 
