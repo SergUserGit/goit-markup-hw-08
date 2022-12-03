@@ -1293,9 +1293,27 @@ body {
 
 .social {
   list-style: none;
+  gap: 10px;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .social {
+    display: none;
+  }
+}
+.social__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .social__ref {
   text-decoration: none;
@@ -1305,6 +1323,12 @@ body {
   line-height: 1.2222;
   letter-spacing: 0.02em;
   color: #2196F3;
+}
+.social__line {
+  margin-left: 10px;
+  width: 1px;
+  height: 22px;
+  stroke: rgba(33, 33, 33, 0.2);
 }
 
 .footer {

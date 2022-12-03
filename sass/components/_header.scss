@@ -243,14 +243,33 @@
 
 .social {
   list-style: none;
-  display: flex;
+
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+    display: flex;
+  }
+
+  @media screen and (min-width: 768px) 
+  {
+    display: none;
+  }
+  gap: 10px;
+
+  &__item {
+    @include displayalign(flex,center);
+  }
 
   &__ref {
     text-decoration: none;
     @include familyweight($font-roboto,500);
     @include font(18px,1.2222,0.02em);
-
     color: $text-blue-color;
-
   }
+
+  &__line {
+    margin-left: 10px;
+    @include geometry(1px,22px);
+    stroke: $border-input-color;
+  }
+  
 }
