@@ -112,7 +112,7 @@
 
     display: block;
 
-    @media screen and (min-width: 1200px) 
+    @media screen and (min-width: 768px) 
     {
       @include padding(32px,31px);
     }
@@ -162,8 +162,6 @@
 }
 
 .contact {
-  margin-left: auto;
-
   display: flex;
   
   @media screen and (min-width: 480px) and (max-width: 767px) 
@@ -174,12 +172,19 @@
   @media screen and (min-width: 768px) and (max-width: 1199px) 
   {
      flex-direction: column;
+     margin-left:90px;
   }  
   
   @media screen and (min-width: 480px) and (max-width: 767px) 
   {
     margin-bottom: 64px;
   }
+
+  @media screen and (min-width: 1200px) 
+  {
+    margin-left:305px;
+  }
+
 
   &__item {
     list-style: none;
@@ -227,7 +232,7 @@
 
     @include displayalign(flex,center);
 
-    @media screen and (min-width: 1200px) 
+    @media screen and (min-width: 768px) 
     {
       @include padding(32px,31px);
     }
@@ -330,7 +335,14 @@
     &.is-open {
      display: block;
     }
-  } 
+  }
+  
+  @media screen and (min-width: 768px) 
+  {
+    display: flex;
+    align-items: center;
+  }
+  
 }
 
 .header-nav {
