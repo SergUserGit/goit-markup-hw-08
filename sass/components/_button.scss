@@ -122,6 +122,7 @@
 
 .menu-button .icon-cross {
   display: none;
+  transition: fill 250ms $timing-function;
 }
 
 .menu-button.is-open .icon-cross {
@@ -132,3 +133,17 @@
   display: none;
 }
 
+.menu-button .icon-menu 
+ {
+  transition: fill 250ms $timing-function; 
+ } 
+
+.menu-button:hover .icon-cross 
+ {
+   fill: $text-blue-color;
+ }
+
+ .menu-button:hover .icon-menu 
+ {
+   fill: $text-blue-color;
+ }

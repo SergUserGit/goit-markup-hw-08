@@ -147,6 +147,8 @@ body {
 
 .menu-button .icon-cross {
   display: none;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-button.is-open .icon-cross {
@@ -155,6 +157,19 @@ body {
 
 .menu-button.is-open .icon-menu {
   display: none;
+}
+
+.menu-button .icon-menu {
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-button:hover .icon-cross {
+  fill: #2196F3;
+}
+
+.menu-button:hover .icon-menu {
+  fill: #2196F3;
 }
 
 .container {
