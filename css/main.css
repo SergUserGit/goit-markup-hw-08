@@ -244,6 +244,17 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .hero__title {
+    max-width: 360px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .hero__title {
+    font-size: 26px;
+    line-height: 1.6154;
+  }
+}
 
 .advantages {
   background-color: #FFFFFF;
