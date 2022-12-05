@@ -1109,6 +1109,12 @@ body {
 .header-logo {
   margin-right: 95px;
 }
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .header-logo {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
 .header-logo__ref {
   text-decoration: none;
 }
@@ -1246,7 +1252,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .contact {
-    margin-left: 305px;
+    margin-left: 301px;
   }
 }
 .contact__item {
@@ -1305,7 +1311,7 @@ body {
   color: #757575;
   text-decoration: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .contact__ref {
     padding-top: 32px;
     padding-bottom: 31px;

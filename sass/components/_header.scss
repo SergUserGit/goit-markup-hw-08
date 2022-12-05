@@ -48,6 +48,12 @@
 .header-logo {
   margin-right: 95px;
 
+  @media screen and (min-width: 480px) and (max-width: 767px) 
+  {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
   &__ref {
     text-decoration: none;
   }
@@ -182,7 +188,7 @@
 
   @media screen and (min-width: 1200px) 
   {
-    margin-left:305px;
+    margin-left:301px;
   }
 
 
@@ -232,7 +238,7 @@
 
     @include displayalign(flex,center);
 
-    @media screen and (min-width: 768px) 
+    @media screen and (min-width: 1200px) 
     {
       @include padding(32px,31px);
     }
