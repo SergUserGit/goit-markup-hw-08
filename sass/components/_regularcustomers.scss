@@ -27,13 +27,27 @@
   background-color: $background-white-color;
 
   &--indent {
+
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
     padding-top: 94px;
     padding-bottom: 94px;
   }
 
   &__title {
-    margin-bottom: 50px;
 
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-bottom: 30px;
+      @include font(28px,1.17857,center,0.03em);
+    }  
+
+    margin-bottom: 50px;
     @include font(36px,1.16667,center,0.03em);
 
   }
