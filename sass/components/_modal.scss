@@ -256,12 +256,22 @@
     @include displayalign(flex,center);  
 
 
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      @include margin(40px,40px,30px);
+    }
+
     @include margin(51px,52px,30px);
 
   &__label {
 
     @include displayalign(flex,center);
     margin-right: 2px;
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      @include font($font-roboto,12px,1.166667,0.03em);
+    }
 
     @include font($font-roboto,14px,1.714,0.03em);
     color: $text-head-color;
@@ -292,6 +302,12 @@
     display: inline-block;
 
     @include geometry(16px, 15px);
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-right: 8px;
+    }
+
     margin-right: 8.38px;
 
     cursor: pointer;
@@ -302,6 +318,10 @@
 
   &__ref {
 
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      @include font($font-roboto,12px,1.16667,0.03em);
+    }  
     @include font($font-roboto,14px,1.714,0.03em);
     color: $text-blue-color;
   }

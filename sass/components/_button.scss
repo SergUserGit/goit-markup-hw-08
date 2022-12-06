@@ -39,6 +39,12 @@
     display: flex;
     @include padding(10px,52px,center);
    
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-left: 125px;
+      margin-right: 125px;
+    }  
+
     margin-left: 164px;
     margin-right: 164px;
     margin-bottom: 40px;

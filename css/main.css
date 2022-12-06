@@ -70,6 +70,12 @@ body {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .button--form-modal {
+    margin-left: 125px;
+    margin-right: 125px;
+  }
+}
 .button--form-modal:hover, .button--form-modal:focus {
   background-color: #188CE8;
 }
@@ -1006,6 +1012,13 @@ body {
   margin-left: 52px;
   margin-bottom: 30px;
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal-condition {
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+  }
+}
 .modal-condition__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1019,6 +1032,14 @@ body {
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: #757575;
+}
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal-condition__label {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1.166667;
+    letter-spacing: 0.03em;
+  }
 }
 .modal-condition__input {
   position: absolute;
@@ -1048,12 +1069,25 @@ body {
   border: 2px solid #212121;
   border-radius: 4px;
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal-condition__icon {
+    margin-right: 8px;
+  }
+}
 .modal-condition__ref {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: #2196F3;
+}
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal-condition__ref {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+  }
 }
 
 .portfolio {
