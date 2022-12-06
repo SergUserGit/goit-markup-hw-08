@@ -27,10 +27,21 @@
   background-color: $background-our-team;
 
   &--indent {
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    { 
+      @include padding(60px,60px);
+    }  
+
     @include padding(94px,94px);
   }
 
   &__title {
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      margin-bottom: 30px;
+    }  
     margin-bottom: 50px;
 
     @include font(36px,1.16667,center,0.03em);
@@ -99,6 +110,14 @@
   }
 
   &__card {
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      padding-top: 30px;
+      padding-bottom: 24px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
     padding: 30px 10px;
   }
 
