@@ -75,12 +75,6 @@
        padding-left: 163px;
        padding-right: 163px;
     }
-
-    @media screen and (min-width: 768px) and (max-width: 1199px)
-    {
-       padding-left: 115px;
-       padding-right: 204px;
-    }
   }
 
   &__ref {
@@ -90,6 +84,11 @@
       display: block;
       text-align: center;
     }  
+    @media screen and (min-width: 768px) and (max-width: 1199px)
+    {
+       margin-left: 115px;
+       margin-right: 204px;
+    }
   }
 
   &__lable {
@@ -117,11 +116,13 @@
 }
 
 .address-block {
-  @media screen and (min-width: 480px) and (max-width: 767px) 
+
+  @media screen and (min-width: 768px) and (max-width: 1199px)
   {
-     padding-left: 124px;
-     padding-right: 124px;
+     margin-left: 76px;
+     margin-right: 165px;
   }
+
   @media screen and (min-width: 1200px) 
   {
     margin-top: 20px;

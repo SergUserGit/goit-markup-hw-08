@@ -1630,12 +1630,6 @@ body {
     padding-right: 163px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .footer-address__logo {
-    padding-left: 115px;
-    padding-right: 204px;
-  }
-}
 .footer-address__ref {
   text-decoration: none;
 }
@@ -1643,6 +1637,12 @@ body {
   .footer-address__ref {
     display: block;
     text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-address__ref {
+    margin-left: 115px;
+    margin-right: 204px;
   }
 }
 .footer-address__lable {
@@ -1674,10 +1674,10 @@ body {
   padding-bottom: 60px;
   font-style: normal;
 }
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .address-block {
-    padding-left: 124px;
-    padding-right: 124px;
+    margin-left: 76px;
+    margin-right: 165px;
   }
 }
 @media screen and (min-width: 1200px) {
