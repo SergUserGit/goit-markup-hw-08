@@ -32,35 +32,54 @@
   padding-bottom: $bottom;
 }
 
+@mixin margin($left,$right) 
+{
+  margin-left: $left;
+  margin-right: $right;
+}
+
+@mixin displayalign($display,$align) 
+{
+  display: $display;
+  align-items: $align;
+}
+
+@mixin displaytext($display,$text) {
+  display: $display;
+  text-align: $text;
+}
+
+@mixin paddinglr($left,$right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
 .footer {
   background-color: $background-hero;
   @media screen and (min-width: 480px) and (max-width: 1199px) 
-    { 
-     /* padding-top: 60px;*/
-      padding-bottom: 60px;
-    }  
+  { 
+    padding-bottom: 60px;
+  }  
 }
 
 .footer-sections {
   @media screen and (min-width: 1200px) 
-  {
-    display: flex;
-    align-items: baseline;
+  { 
+    @include displayalign(flex,baseline);
   }
 }
 
 .footer-block {
   @media screen and (min-width: 768px) 
   {
-   display: flex;
-   align-items: baseline;
+    @include displayalign(flex,baseline); 
   }
 }
 
 .footer-address {
   @media screen and (min-width: 1200px) 
   {
-      margin-right: 70px;
+    margin-right: 70px;
   }
   
   &__logo {
@@ -72,8 +91,7 @@
 
     @media screen and (min-width: 480px) and (max-width: 767px)
     {
-       padding-left: 163px;
-       padding-right: 163px;
+       @include paddinglr(163px,163px);
     }
   }
 
@@ -82,13 +100,11 @@
    
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     { 
-      display: block;
-      text-align: center;
+      @include displaytext(block,center);
     }  
     @media screen and (min-width: 768px) and (max-width: 1199px)
     {
-       margin-left: 115px;
-       margin-right: 204px;
+       @include margin(115px,204px); 
     }
   }
 
@@ -120,8 +136,7 @@
 
   @media screen and (min-width: 768px) and (max-width: 1199px)
   {
-     margin-left: 76px;
-     margin-right: 165px;
+    @include margin(76px,165px);
   }
 
   @media screen and (min-width: 1200px) 
@@ -155,8 +170,7 @@
 
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     { 
-      display: block;
-      text-align: center;
+      @include displaytext(block,center);
     }  
 
   }
@@ -185,8 +199,7 @@
 
   @media screen and (min-width: 480px) and (max-width: 767px) {
     margin-bottom: 60px;
-    padding-left: 137px;
-    padding-right: 137px;
+    @include paddinglr(137px,137px);
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) 
@@ -254,8 +267,7 @@
 
   @media screen and (min-width: 768px) and (max-width: 1199px) 
   {
-    padding-left: 159px;
-    padding-right: 159px;
+    @include paddinglr(159px,159px);
   }
 
   &__title {
@@ -271,8 +283,7 @@
   &__mailing {
     @media screen and (min-width: 1200px) 
     {
-      display: flex;
-      align-items: center;
+      @include displayalign(flex,center);
     }
   }
 
@@ -316,12 +327,11 @@
     {
       margin-right: 10px;
     }
-    display: block;
 
-  
+    @include displaytext(block,center);
+
     font-weight: 700;
     @include font(16px,1.875,0.06em);
-    text-align: center;
     @include fontcolor($font-roboto, $background-white-color);
   }
 

@@ -164,8 +164,7 @@
 }
 
 .menu-icon {
-  width: 40px;
-  height: 40px;
+  @include geometry(40px,40px);
 }
 
 .contact {
@@ -198,9 +197,9 @@
   }
 
   &__item--alignment {
-    display: flex;
-    align-items: center;
 
+    @include displayalign(flex,center);
+    
     @media screen and (min-width: 480px) and (max-width: 767px) 
     {
       margin-top: 32px;
@@ -331,8 +330,9 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    height: 796px;
+    
+    @include geometry(100%,796px);
+   
     padding-left: 40px;
     padding-top: 48px;
 
@@ -346,8 +346,7 @@
   
   @media screen and (min-width: 768px) 
   {
-    display: flex;
-    align-items: center;
+    @include displayalign(flex,center);
   }
   
 }

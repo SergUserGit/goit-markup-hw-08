@@ -23,6 +23,12 @@
   letter-spacing: $letterspacing;
 }
 
+@mixin padding($top,$bottom) 
+{
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
 .regular-customers {
   background-color: $background-white-color;
 
@@ -31,12 +37,11 @@
 
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     {
-      padding-top: 60px;
-      padding-bottom: 60px;
+      @include padding(60px,60px);
     }
 
-    padding-top: 94px;
-    padding-bottom: 94px;
+    @include padding(94px,94px);
+    
   }
 
   &__title {
