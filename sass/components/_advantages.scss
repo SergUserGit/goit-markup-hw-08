@@ -14,7 +14,7 @@
 .advantages {
     background-color: $background-white-color;
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       margin-bottom: 60px;
     } 
@@ -60,6 +60,11 @@
       &__item {
          list-style: none; 
          
+         @media screen and (min-width: 0px) and (max-width: 479px) 
+         {
+            width: auto;
+         }
+
          @media screen and (min-width: 480px) and (max-width: 767px) 
         {
           width: 450px; 
@@ -76,7 +81,7 @@
       }
 
       &__item:last-child {
-        @media screen and (min-width: 480px) and (max-width: 767px) 
+        @media screen and (min-width: 0px) and (max-width: 767px) 
         {
            margin-bottom: 0;
         }  
@@ -84,7 +89,16 @@
 
       &__logo {
 
-        @media screen and (min-width: 480px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        margin-bottom: 30px;
+      
+        background: $background-our-team;
+        border-radius: 4px;
+
+        @media screen and (min-width: 0px) {
           padding: 25px 19px;
         }
 
@@ -96,14 +110,7 @@
           padding: 25px 10px;
         }
  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-        margin-bottom: 30px;
       
-        background: $background-our-team;
-        border-radius: 4px;
       }
 
       &__icon {

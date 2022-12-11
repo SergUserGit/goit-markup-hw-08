@@ -39,24 +39,26 @@
 
   &--form-modal {
     transition: background-color 250ms $timing-function;
-
     outline: none;
     display: flex;
     @include padding(10px,52px,center);
-   
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
-    {
-      @include margin(125px,125px);
-    }  
-
     @include margin(164px,164px);
     margin-bottom: 40px;
-
     font-family: $font-roboto;
     @include font(700,16px,1.875,0.06em);
     text-align: center;
     @include color($background-white-color,$text-blue-color);
     @include shadowradius(0px,4px,4px,$button-form-color,4px);
+
+    @media screen and (min-width: 0px) and (max-width: 479px) 
+    {
+      @include margin(auto,auto);
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+      @include margin(125px,125px);
+    }  
   }
 
   &--form-modal:hover,
@@ -93,12 +95,10 @@
     padding-bottom: 10px;
     outline: none;
     width: 200px;
-
     background-color: $text-blue-color;
-
     @include shadowradius(0px,4px,4px,$button-form-color,4px);
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       @include margin(auto,auto);
     }  
@@ -108,6 +108,11 @@
 }
 
 .menu-button {
+
+  @media screen and (min-width: 0px) and (max-width: 479px) 
+  {
+    margin-left: auto;
+  } 
 
   @media screen and (min-width: 768px) 
   {

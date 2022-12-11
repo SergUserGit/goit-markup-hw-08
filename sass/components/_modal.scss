@@ -59,12 +59,17 @@
 }
 
 .modal {
-
   @include position(absolute,50%,50%);
-
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $timing-function;
+  background-color: $background-white-color;
+  box-shadow: 0px 1px 3px $box-shadow-one, 0px 1px 1px $box-shadow-two, 0px 2px 1px $box-shadow-three;
+  border-radius: 4px;
 
+  @media screen and (min-width: 0px) and (max-width: 479px) 
+  {
+    @include geometry(100%,609px);
+  }
 
   @media screen and (min-width: 480px) and (max-width: 1199px) 
   { 
@@ -76,10 +81,6 @@
    min-width: 528px;
    min-height: 581px;
   }
-
-  background-color: $background-white-color;
-  box-shadow: 0px 1px 3px $box-shadow-one, 0px 1px 1px $box-shadow-two, 0px 2px 1px $box-shadow-three;
-  border-radius: 4px;
 }
 
 .modal-button {
@@ -121,16 +122,18 @@
 .modal-form {
 
   &__title {
+
     margin-top: 40px;
     @include margin(40px,40px,12px);
+    @include font($font-roboto,20px,1.15,0.03em);
+    text-align: center;
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       @include font($font-roboto,20px,1.5,0.03em);
     }
 
-    @include font($font-roboto,20px,1.15,0.03em);
-    text-align: center;
+   
   }
 }
 
@@ -156,20 +159,23 @@
 
   &__input {
 
+    @include geometry(448px, 40px);
+    padding-left: 42px;
+    outline: none;
+    cursor: pointer;
+    @include borderradius(1px,solid,$border-input-color,4px);
+ 
+    @media screen and (min-width: 0px) and (max-width: 479px) 
+    {
+      @include geometry(100%, 40px);
+    }
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     {
       @include geometry(370px, 40px);
     }
-
-    @include geometry(448px, 40px);
-    padding-left: 42px;
-    outline: none;
+ }
   
-    cursor: pointer;
-
-    @include borderradius(1px,solid,$border-input-color,4px);
-  }
-
+  
   &__icon {
 
     @include position(absolute,11px,12px);
@@ -218,26 +224,24 @@
   &__comment {
     outline: none;
     resize: none;
+    @include geometry(448px, 120px);
+    padding: 12px 16px;
+    @include font($font-roboto,12px,1.1666,0.01em);
+    color: $color-textarea;
+    @include borderradius(1px,solid,$border-input-color,4px);
+
+    @media screen and (min-width: 0px) and (max-width: 479px) 
+    {
+      @include geometry(100%, 120px);
+      @include font($font-roboto,14px,1.14286,0.01em);
+    }
 
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     {
       @include geometry(370px, 120px);
-    }
-
-    @include geometry(448px, 120px);
-    padding: 12px 16px;
-
-    @include font($font-roboto,12px,1.1666,0.01em);
-
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
-    {
       @include font($font-roboto,14px,1.14286,0.01em);
     }
 
-    color: $color-textarea;
-
-    @include borderradius(1px,solid,$border-input-color,4px);
-  
   }
 
   & .modal-textarea__comment {
@@ -253,27 +257,27 @@
   .modal-condition {
 
     @include displayalign(flex,center);  
+    @include margin(51px,52px,30px);
 
-
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       @include margin(40px,40px,30px);
     }
 
-    @include margin(51px,52px,30px);
+    
 
   &__label {
 
     @include displayalign(flex,center);
     margin-right: 2px;
+    @include font($font-roboto,14px,1.714,0.03em);
+    color: $text-head-color;
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       @include font($font-roboto,12px,1.166667,0.03em);
     }
-
-    @include font($font-roboto,14px,1.714,0.03em);
-    color: $text-head-color;
+ 
   }
 
   &__input {
@@ -299,30 +303,28 @@
 
   &__icon {
     display: inline-block;
-
     @include geometry(16px, 15px);
+    margin-right: 8.38px;
+    cursor: pointer;
+    @include borderradius(2px,solid,$main-color,4px);
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       margin-right: 8px;
     }
-
-    margin-right: 8.38px;
-
-    cursor: pointer;
-
-    @include borderradius(2px,solid,$main-color,4px);
 
   }
 
   &__ref {
 
-    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    @include font($font-roboto,14px,1.714,0.03em);
+    color: $text-blue-color;
+
+    @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
       @include font($font-roboto,12px,1.16667,0.03em);
     }  
-    @include font($font-roboto,14px,1.714,0.03em);
-    color: $text-blue-color;
+  
   }
 
  }
