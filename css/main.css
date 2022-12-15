@@ -712,6 +712,24 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (min-width: 0px) {
+  .customers-list__item--alignment {
+    -ms-flex-preferred-size: calc((100% - 180px) / 2);
+        flex-basis: calc((100% - 180px) / 2);
+  }
+}
+@media screen and (min-width: 768px) {
+  .customers-list__item--alignment {
+    -ms-flex-preferred-size: calc((100% - 180px) / 3);
+        flex-basis: calc((100% - 180px) / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .customers-list__item--alignment {
+    -ms-flex-preferred-size: calc((100% - 180px) / 6);
+        flex-basis: calc((100% - 180px) / 6);
+  }
+}
 .customers-list__icon {
   width: 0px;
   height: 0px;

@@ -67,12 +67,24 @@
   }
 
   &__item {
-    list-style: none;
+    list-style: none; 
   }
 
   &__item--alignment {
 
     @include displayjustify(flex,center,center);
+    
+    @media screen and (min-width: 0px)  {
+      flex-basis: calc((100% - 180px) / 2);
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 180px) / 3);
+    }
+  
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 180px) / 6);
+    }
 
   }
 
