@@ -125,6 +125,8 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
+  z-index: 51;
 }
 
 .menu-button .icon-cross {

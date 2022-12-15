@@ -35,53 +35,57 @@
             </ul>
           </nav>
 
-          <ul class="contact">
-            <li class="contact__item contact__item--alignment">
+          <div class="header__contact">
 
-              <a class="contact__ref contact__ref--transition contact__ref--mail" href="mailto:info@devstudio.com">
-                <svg class="contact__icon contact__icon--convert">
-                  <use href="./images/icons.svg#icon-envelope"></use>
+            <ul class="contact">
+              <li class="contact__item contact__item--alignment">
+
+                <a class="contact__ref contact__ref--transition contact__ref--mail" href="mailto:info@devstudio.com">
+                  <svg class="contact__icon contact__icon--convert">
+                    <use href="./images/icons.svg#icon-envelope"></use>
+                  </svg>
+                  <span class="contact__value">info@devstudio.com</span>
+                </a>
+
+              </li>
+
+              <li class="contact__item contact__item--alignment">
+
+                <a class="contact__ref contact__ref--transition contact__ref--tel" href="tel:+380961111111">
+                  <svg class="contact__icon contact__icon--telephone">
+                    <use href="./images/icons.svg#icon-smartphone"></use>
+                  </svg>
+                  <span class="contact__value">+38 096 111 1111</span>
+                </a>
+
+              </li>
+            </ul>
+
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__ref" href="#">Instagram</a>
+                <svg class="social__line">
+                  <use href="./images/icons.svg#icon-socialline"></use>
                 </svg>
-                <span class="contact__value">info@devstudio.com</span>
-              </a>
-
-            </li>
-
-            <li class="contact__item contact__item--alignment">
-
-              <a class="contact__ref contact__ref--transition contact__ref--tel" href="tel:+380961111111">
-                <svg class="contact__icon contact__icon--telephone">
-                  <use href="./images/icons.svg#icon-smartphone"></use>
+              </li>
+              <li class="social__item">
+                <a class="social__ref" href="#">Twitter</a>
+                <svg class="social__line">
+                  <use href="./images/icons.svg#icon-socialline"></use>
                 </svg>
-                <span class="contact__value">+38 096 111 1111</span>
-              </a>
+              </li>
+              <li class="social__item">
+                <a class="social__ref" href="#">Facebook</a>
+                <svg class="social__line">
+                  <use href="./images/icons.svg#icon-socialline"></use>
+                </svg>
+              </li>
+              <li class="social__item">
+                <a class="social__ref" href="#">LinkedIn</a>
+              </li>
+            </ul>
 
-            </li>
-          </ul>
-
-          <ul class="social">
-            <li class="social__item">
-              <a class="social__ref" href="#">Instagram</a>
-              <svg class="social__line">
-                <use href="./images/icons.svg#icon-socialline"></use>
-              </svg>
-            </li>
-            <li class="social__item">
-              <a class="social__ref" href="#">Twitter</a>
-              <svg class="social__line">
-                <use href="./images/icons.svg#icon-socialline"></use>
-              </svg>
-            </li>
-            <li class="social__item">
-              <a class="social__ref" href="#">Facebook</a>
-              <svg class="social__line">
-                <use href="./images/icons.svg#icon-socialline"></use>
-              </svg>
-            </li>
-            <li class="social__item">
-              <a class="social__ref" href="#">LinkedIn</a>
-            </li>
-          </ul>
+          </div>
 
         </div>
 
@@ -203,8 +207,17 @@
 
         <ul class="team-list">
           <li class="team-list__item team-list__item--active">
-            <img class="team-list__img" srcset="./images/teammemberone.jpg 1x, ./images/teammemberonetwox.jpg 2x"
-              src="./images/teammemberone.jpg" alt="team member one">
+
+            <picture>
+              <source srcset="./images/teamonemobileone.jpg 1x, ./images/teamonemobiletwo.jpg 2x"
+                media="screen and (min-width: 0px) and (max-width: 767px)">
+              <source srcset="./images/teamonetableone.jpg 1x, ./images/teamonetabletwo.jpg 2x"
+                media="screen and (min-width: 768px) and (max-width: 1199px)">
+              <source srcset="./images/teamonedesctopone.jpg 1x, ./images/teamonedesctoptwo.jpg 2x"
+                media="screen and (min-width: 1200px)">
+              <img class="team-list__img" src="./images/teammemberone.jpg" alt="team member one">
+            </picture>
+
             <div class="team-list__card">
               <h3 class="team-list__employee">Ігор Дем'яненко</h3>
               <p class="team-list__position">Product Designer</p>
@@ -241,8 +254,15 @@
             </div>
           </li>
           <li class="team-list__item team-list__item--active">
-            <img class="team-list__img" srcset="./images/teammembertwo.jpg 1x, ./images/teammembertwotwox.jpg 2x"
-              src="./images/teammembertwo.jpg" alt="teammember two">
+            <picture>
+              <source srcset="./images/teamtwomobileone.jpg 1x, ./images/teamtwomobiletwo.jpg 2x"
+                media="screen and (min-width: 0px) and (max-width: 767px)">
+              <source srcset="./images/teamtwotabletone.jpg 1x, ./images/teamtwotablettwo.jpg 2x"
+                media="screen and (min-width: 768px) and (max-width: 1199px)">
+              <source srcset="./images/teamtwodesctopone.jpg 1x, ./images/teamtwodesctoptwo.jpg 2x"
+                media="screen and (min-width: 1200px)">
+              <img class="team-list__img" src="./images/teammembertwo.jpg" alt="teammember two">
+            </picture>
             <div class="team-list__card">
               <h3 class="team-list__employee">Ольга Рєпіна</h3>
               <p class="team-list__position">Frontend Developer</p>
@@ -279,8 +299,15 @@
             </div>
           </li>
           <li class="team-list__item team-list__item--active">
-            <img class="team-list__img" srcset="./images/teammemberthree.jpg 1x, ./images/teammemberthreetwox.jpg 2x"
-              src="./images/teammemberthree.jpg" alt="teammember three">
+            <picture>
+              <source srcset="./images/teamthreemobileone.jpg 1x, ./images/teamthreemobiletwo.jpg 2x"
+                media="screen and (min-width: 0px) and (max-width: 767px)">
+              <source srcset="./images/teamthreetabletone.jpg 1x, ./images/teamthreetablettwo.jpg 2x"
+                media="screen and (min-width: 768px) and (max-width: 1199px)">
+              <source srcset="./images/teamthreedesctopone.jpg 1x, ./images/teamthreedesctoptwo.jpg 2x"
+                media="screen and (min-width: 1200px)">
+              <img class="team-list__img" src="./images/teammemberthree.jpg" alt="teammember three">
+            </picture>
             <div class="team-list__card">
               <h3 class="team-list__employee">Микола Тарасов</h3>
               <p class="team-list__position">Marketing</p>
@@ -317,8 +344,15 @@
             </div>
           </li>
           <li class="team-list__item team-list__item--active">
-            <img class="team-list__img" srcset="./images/teammemberfour.jpg 1x, ./images/teammemberfourtwox.jpg 2x"
-              src="./images/teammemberfour.jpg" alt="teammember four">
+            <picture>
+              <source srcset="./images/teamfourmobileone.jpg 1x, ./images/teamfourmobiletwo.jpg 2x"
+                media="screen and (min-width: 0px) and (max-width: 767px)">
+              <source srcset="./images/teamfourtabletone.jpg 1x, ./images/teamfourtablettwo.jpg 2x"
+                media="screen and (min-width: 768px) and (max-width: 1199px)">
+              <source srcset="./images/teamfourdesctopone.jpg 1x, ./images/teamfourdesctoptwo.jpg 2x"
+                media="screen and (min-width: 1200px)">
+              <img class="team-list__img" src="./images/teammemberfour.jpg" alt="teammember four">
+            </picture>
             <div class="team-list__card">
               <h3 class="team-list__employee">Михайло Єрмаков</h3>
               <p class="team-list__position">UI Designer</p>
@@ -586,7 +620,12 @@
     </div>
   </div>
 
+
   <script src="./script/modal.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+    crossorigin="anonymous">
+    </script>
   <script src="./script/menu.js"></script>
 
 </body>

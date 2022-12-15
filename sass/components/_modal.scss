@@ -41,10 +41,13 @@
 
 
 .backdrop {
+
+ /* padding: 10px;*/
+
   @include position(fixed,0,0);
   transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
 
-  @include geometry(100%, 100%);
+  @include geometry(100vw, 100vh);
   background-color: $box-shadow-three;
 
   &--is-hidden {
@@ -68,7 +71,9 @@
 
   @media screen and (min-width: 0px) and (max-width: 479px) 
   {
-    @include geometry(100%,609px);
+    /*@include geometry(100%,609px);*/
+    width: calc(100% - 20px);
+    min-height: 609px;
   }
 
   @media screen and (min-width: 480px) and (max-width: 1199px) 
@@ -124,9 +129,20 @@
   &__title {
 
     margin-top: 40px;
-    @include margin(40px,40px,12px);
+
     @include font($font-roboto,20px,1.15,0.03em);
     text-align: center;
+
+    @media screen and (min-width: 0px) and (max-width: 479px) 
+    {
+      @include margin(20px,20px,12px);
+    }
+
+    @media screen and (min-width: 480px) 
+    {
+      @include margin(40px,40px,12px);
+    }
+
 
     @media screen and (min-width: 0px) and (max-width: 1199px) 
     {
@@ -138,7 +154,20 @@
 }
 
 .modal-group {
-  @include margin(40px,40px,20px);
+  
+ @media screen and (min-width: 0px) and (max-width: 479px) 
+  {
+    padding-right: 20px;
+    padding-left: 20px;
+  }  
+
+ @media screen and (min-width: 480px) 
+  {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  
+  padding-bottom: 20px;
 }
 
 .modal-field {
@@ -259,9 +288,14 @@
     @include displayalign(flex,center);  
     @include margin(51px,52px,30px);
 
-    @media screen and (min-width: 0px) and (max-width: 1199px) 
+    @media screen and (min-width: 0px) and (max-width: 479px) 
     {
-      @include margin(40px,40px,30px);
+     @include margin(20px,20px,30px);
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) 
+    {
+     @include margin(40px,40px,30px);
     }
 
     
