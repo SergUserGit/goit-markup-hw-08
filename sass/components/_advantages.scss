@@ -51,6 +51,7 @@
       @media screen and (min-width: 768px) and (max-width: 1199px) 
       {
          flex-wrap: wrap; 
+         justify-content: center;
       }            
     }
    
@@ -62,21 +63,21 @@
          
          @media screen and (min-width: 0px) and (max-width: 479px) 
          {
-            width: auto;
+            flex-basis: calc((100% - 90px)/1);
          }
 
          @media screen and (min-width: 480px) and (max-width: 767px) 
         {
-          width: 450px; 
+          flex-basis: calc( (100% - 90px)/1);
           margin-bottom: 30px;
         } 
          @media screen and (min-width: 768px) and (max-width: 1199px) 
         {
-         width: 354px; 
+          flex-basis: calc((100% - 90px)/2);
         }    
         @media screen and (min-width: 1200px) 
         {
-         width: 270px; 
+          flex-basis: calc((100% - 90px)/4);
         }  
       }
 
