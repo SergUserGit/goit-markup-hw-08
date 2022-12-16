@@ -315,7 +315,8 @@
 
     @media screen and (min-width: 480px) and (max-width: 1199px) 
     {
-      @include geometry(450px,50px);
+      @include geometry(100%,50px);
+      max-width: 450px;
       margin-bottom: 20px;
     }
 
